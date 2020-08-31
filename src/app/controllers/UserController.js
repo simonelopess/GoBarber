@@ -10,7 +10,12 @@ class UserController {
     }
 
     const { id, name, email, provider } = await User.create(req.body); //retorno de campos pro front end
-    return res.json(id, name, email, provider);
+    return res.json({
+      id,
+      name,
+      email,
+      provider,
+    });
   }
 
 }
