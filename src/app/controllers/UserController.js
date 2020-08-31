@@ -9,8 +9,8 @@ class UserController {
       return res.status(400).json({error: 'Usuário já existe'});
     }
 
-    const user = await User.create(req.body);
-    return res.json(user);
+    const { id, name, email, provider } = await User.create(req.body); //retorno de campos pro front end
+    return res.json(id, name, email, provider);
   }
 
 }
